@@ -16,7 +16,7 @@ services:
       - ./mysql:/etc/mysql
       - ./conf.d:/etc/mysql/mysql.conf.d
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - "host.docker.internal:172.17.0.1"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
