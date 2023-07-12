@@ -10,13 +10,12 @@ services:
       - "33600:3306"
     environment:
       - MYSQL_DATABASE=fullcycle
+      - MYSQL_PASSWORD=root
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=carlos
     volumes:
-      - ./mysql:/etc/mysql
-      - ./conf.d:/etc/mysql/mysql.conf.d
+      - ./mysql:/var/lib/mysql
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
