@@ -1,0 +1,33 @@
+{
+  "name": "fc/ms-api-php-laravel",
+  "autoload": {
+    "psr-4": {
+      "Core\\": "src/Core"
+    }
+  },
+  "authors": [
+    {
+      "name": "Bruno Costa",
+      "email": "bhcosta90@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require-dev": {
+    "php": "^8.1",
+    "pestphp/pest": "^2.16",
+    "symfony/var-dumper": "^6.3"
+  },
+  "scripts": {
+    "test": [
+      "./vendor/bin/pest"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "require": {
+    "ramsey/uuid": "^4.7"
+  }
+}
