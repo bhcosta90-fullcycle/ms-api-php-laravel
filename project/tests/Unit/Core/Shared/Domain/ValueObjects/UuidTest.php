@@ -3,7 +3,7 @@
 use Core\Shared\Domain\ValueObjects\Uuid;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
-describe("Uuid Unit Test", function(){
+describe("Uuid Unit Test", function () {
     test('should throw exception if receive invalid uuid', function () {
         new Uuid('invalid_uuid');
     })->throws(\InvalidArgumentException::class);
@@ -18,7 +18,7 @@ describe("Uuid Unit Test", function(){
     });
 
     test('should be string', function () {
-        $uuid = (string) Uuid::random();
+        $uuid = (string)Uuid::random();
         expect($uuid)->toBeString();
     });
 });
