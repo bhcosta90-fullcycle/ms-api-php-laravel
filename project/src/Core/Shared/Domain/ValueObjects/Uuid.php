@@ -13,12 +13,6 @@ class Uuid
         $this->ensureIsValid($value);
     }
 
-    private function ensureIsValid(string $value): void
-    {
-        if (!RamseyUuid::isValid($value)) {
-            throw new InvalidArgumentException(sprintf("<%s> does not allow the value <%s>", static::class, $value));
-        }
-    }
 
     public static function random(): self
     {
@@ -28,5 +22,12 @@ class Uuid
     public function __toString(): string
     {
         return $this->value;
+    }
+
+    protected function ensureIsValid(string $value): void
+    {
+        if (!RamseyUuid::isValid($value)) {
+            throw new InvalidArgumentException(sprintf("<%s> does not allow the value <%s>", static::class, $value));
+        }
     }
 }
